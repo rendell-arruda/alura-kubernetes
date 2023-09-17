@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend-rs # Nome do ReplicaSet
+  labels:
+    app: frontend # Label para identificar o ReplicaSet
+spec:
+  template:
+    metadata:
+      name: nginx-pod # Nome do Pod
+      labels:
+        env: production # Label para identificar o Pod
+    spec:
+      containers:
+        - name: nginx-container # Nome do container
+          image: nginx # Imagem do container
+  selector:
+    matchLabels:
+      env: production # Label para identificar o Pod
+  replicas: 2 # Quantidade de réplicas
