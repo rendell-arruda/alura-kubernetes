@@ -15,10 +15,10 @@ spec:
     spec:
       containers:
         - name: frontend-container # Nome do container
-          image: nginx:42.geek # Imagem do container
+          image: nginx # Imagem do container
   selector:
     matchLabels:
       type: frontend # Label para identificar o Pod
   strategy:
-    type: Recreate # Tipo de estratégia de deploy
+    type: RollingUpdate # Tipo de estratégia de deploy
   replicas: 6 # Quantidade de réplicas
