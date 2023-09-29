@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: db-noticias-container
-          image: aluracursos/db-noticias:1
+          image: aluracursos/mysql-db:1
           ports:
             - containerPort: 3306
           envFrom:
